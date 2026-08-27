@@ -89,26 +89,19 @@ function checkTimeLeftCallback(seconds, callback) {
 // ============================================================
 
 function startCountdown(seconds) {
-
     let remaining = seconds;
 
     const interval = setInterval(() => {
-
         console.log(`${remaining} seconds remaining`);
 
         if (remaining === 0) {
             clearInterval(interval);
+            console.log("Time's up!");
             return;
         }
 
         remaining--;
-
     }, 1000);
-
-    // Separate setTimeout sends the final notification.
-    setTimeout(() => {
-        console.log("Time's up!");
-    }, seconds * 1000);
 }
 
 
